@@ -1,3 +1,5 @@
+using lab_1.Models;
+
 namespace lab_1
 {
     internal static class Program

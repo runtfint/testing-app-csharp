@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace lab_1.Models.Classes
 {
-    public class Test
+    internal class RootObject
     {
-        public List<Question> Questions { get; set; }
+        public Dictionary<string, Test> tests { get; set; }
     }
 }

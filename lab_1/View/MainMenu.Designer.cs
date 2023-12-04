@@ -35,6 +35,7 @@
             label3 = new Label();
             editTestButton = new Button();
             deleteTestButton = new Button();
+            Column1 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)testGridView).BeginInit();
             SuspendLayout();
             // 
@@ -68,10 +69,13 @@
             createTestButton.TabIndex = 2;
             createTestButton.Text = "Создать тест";
             createTestButton.UseVisualStyleBackColor = false;
+            createTestButton.Click += createTestButton_Click;
             // 
             // testGridView
             // 
+            testGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             testGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            testGridView.Columns.AddRange(new DataGridViewColumn[] { Column1 });
             testGridView.Location = new Point(26, 122);
             testGridView.Name = "testGridView";
             testGridView.RowTemplate.Height = 25;
@@ -109,6 +113,11 @@
             deleteTestButton.Text = "Delete";
             deleteTestButton.UseVisualStyleBackColor = false;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "Мои тесты";
+            Column1.Name = "Column1";
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -139,5 +148,6 @@
         private Label label3;
         private Button editTestButton;
         private Button deleteTestButton;
+        private DataGridViewTextBoxColumn Column1;
     }
 }

@@ -1,22 +1,30 @@
-using lab_1.
+using lab_1.Models;
+using lab_1.Models.Classes;
+using lab_1.View;
+using lab_1.ViewModel;
+using System.Diagnostics;
 
 namespace lab_1
 {
     public partial class MainMenu : Form
     {
-        public MainMenu(TestDataVM testDataVM)
+        public MainMenu()
         {
             InitializeComponent();
-            InitializeBindings();
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            JSONworker json = new JSONworker();
+            dynamic data = json.ReadData();
+            Console.WriteLine(data.ToString());
 
         }
-        private void InitializeBindings()
+
+        private void createTestButton_Click(object sender, EventArgs e)
         {
-            createTestButton.DataBindings.Add(new Binding( 'createTestButton',  );
+            CreateTest newTestForm = new CreateTest();
+            newTestForm.Show();
         }
     }
 }

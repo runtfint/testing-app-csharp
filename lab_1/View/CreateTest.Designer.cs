@@ -32,10 +32,10 @@
             textBox1 = new TextBox();
             label2 = new Label();
             textBox2 = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
             button2 = new Button();
             dataGridView1 = new DataGridView();
+            answer_text = new DataGridViewTextBoxColumn();
+            answer_true = new DataGridViewTextBoxColumn();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -74,24 +74,6 @@
             textBox2.Size = new Size(377, 23);
             textBox2.TabIndex = 3;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 153);
-            label3.Name = "label3";
-            label3.Size = new Size(47, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Ответы";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(170, 153);
-            label4.Name = "label4";
-            label4.Size = new Size(90, 15);
-            label4.TabIndex = 13;
-            label4.Text = "Верные ответы";
-            // 
             // button2
             // 
             button2.Location = new Point(12, 380);
@@ -104,12 +86,26 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 171);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { answer_text, answer_true });
+            dataGridView1.Location = new Point(12, 156);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(377, 150);
+            dataGridView1.Size = new Size(677, 165);
             dataGridView1.TabIndex = 17;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.Rows.Add(4);
+            // 
+            // answer_text
+            // 
+            answer_text.HeaderText = "Текст ответа";
+            answer_text.Name = "answer_text";
+            // 
+            // answer_true
+            // 
+            answer_true.HeaderText = "Верные ответы";
+            answer_true.Name = "answer_true";
             // 
             // button1
             // 
@@ -119,6 +115,7 @@
             button1.TabIndex = 18;
             button1.Text = "Следующий вопрос";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // CreateTest
             // 
@@ -129,8 +126,6 @@
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(button2);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(textBox2);
             Controls.Add(label2);
             Controls.Add(textBox1);
@@ -148,10 +143,10 @@
         private TextBox textBox1;
         private Label label2;
         private TextBox textBox2;
-        private Label label3;
-        private Label label4;
         private Button button2;
         private DataGridView dataGridView1;
         private Button button1;
+        private DataGridViewTextBoxColumn answer_text;
+        private DataGridViewTextBoxColumn answer_true;
     }
 }
