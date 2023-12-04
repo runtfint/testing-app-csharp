@@ -8,6 +8,6 @@ namespace lab_1.Models.Classes
 {
     public class Test
     {
-        public List<Question> Questions { get; set; }
+        public List <Question> Questions { get; set; }
     }
 }

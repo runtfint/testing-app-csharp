@@ -30,9 +30,12 @@
         {
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            createTestButton = new Button();
+            testGridView = new DataGridView();
+            label3 = new Label();
+            editTestButton = new Button();
+            deleteTestButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)testGridView).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -55,26 +58,56 @@
             label2.TabIndex = 1;
             label2.Text = "POWERED BY гений seksa и H0pP3r145";
             // 
-            // button1
+            // createTestButton
             // 
-            button1.BackColor = Color.LightCoral;
-            button1.Font = new Font("Comic Sans MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(569, 95);
-            button1.Name = "button1";
-            button1.Size = new Size(208, 59);
-            button1.TabIndex = 2;
-            button1.Text = "Создать тест";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            createTestButton.BackColor = Color.LightCoral;
+            createTestButton.Font = new Font("Comic Sans MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            createTestButton.Location = new Point(569, 122);
+            createTestButton.Name = "createTestButton";
+            createTestButton.Size = new Size(208, 59);
+            createTestButton.TabIndex = 2;
+            createTestButton.Text = "Создать тест";
+            createTestButton.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // testGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(26, 95);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(512, 266);
-            dataGridView1.TabIndex = 4;
+            testGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            testGridView.Location = new Point(26, 122);
+            testGridView.Name = "testGridView";
+            testGridView.RowTemplate.Height = 25;
+            testGridView.Size = new Size(512, 266);
+            testGridView.TabIndex = 4;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(26, 95);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Мои тесты";
+            // 
+            // editTestButton
+            // 
+            editTestButton.BackColor = Color.LightCoral;
+            editTestButton.Font = new Font("Comic Sans MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            editTestButton.Location = new Point(569, 196);
+            editTestButton.Name = "editTestButton";
+            editTestButton.Size = new Size(208, 59);
+            editTestButton.TabIndex = 6;
+            editTestButton.Text = "Edit";
+            editTestButton.UseVisualStyleBackColor = false;
+            // 
+            // deleteTestButton
+            // 
+            deleteTestButton.BackColor = Color.LightCoral;
+            deleteTestButton.Font = new Font("Comic Sans MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteTestButton.Location = new Point(569, 271);
+            deleteTestButton.Name = "deleteTestButton";
+            deleteTestButton.Size = new Size(208, 59);
+            deleteTestButton.TabIndex = 7;
+            deleteTestButton.Text = "Delete";
+            deleteTestButton.UseVisualStyleBackColor = false;
             // 
             // MainMenu
             // 
@@ -82,13 +115,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
+            Controls.Add(deleteTestButton);
+            Controls.Add(editTestButton);
+            Controls.Add(label3);
+            Controls.Add(testGridView);
+            Controls.Add(createTestButton);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "MainMenu";
             Text = "GOOGLE FORM EATER";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += MainMenu_Load;
+            ((System.ComponentModel.ISupportInitialize)testGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -97,7 +134,10 @@
 
         private Label label1;
         private Label label2;
-        private Button button1;
-        private DataGridView dataGridView1;
+        private Button createTestButton;
+        private DataGridView testGridView;
+        private Label label3;
+        private Button editTestButton;
+        private Button deleteTestButton;
     }
 }

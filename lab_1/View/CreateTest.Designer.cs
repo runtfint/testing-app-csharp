@@ -32,15 +32,12 @@
             textBox1 = new TextBox();
             label2 = new Label();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             label3 = new Label();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
             label4 = new Label();
-            checkedListBox1 = new CheckedListBox();
-            button1 = new Button();
             button2 = new Button();
+            dataGridView1 = new DataGridView();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -77,75 +74,27 @@
             textBox2.Size = new Size(377, 23);
             textBox2.TabIndex = 3;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(12, 193);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(130, 23);
-            textBox3.TabIndex = 4;
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 164);
+            label3.Location = new Point(12, 153);
             label3.Name = "label3";
             label3.Size = new Size(47, 15);
             label3.TabIndex = 5;
             label3.Text = "Ответы";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(12, 222);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(130, 23);
-            textBox4.TabIndex = 6;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(12, 251);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(130, 23);
-            textBox5.TabIndex = 7;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(12, 280);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(130, 23);
-            textBox6.TabIndex = 8;
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(170, 164);
+            label4.Location = new Point(170, 153);
             label4.Name = "label4";
             label4.Size = new Size(90, 15);
             label4.TabIndex = 13;
             label4.Text = "Верные ответы";
             // 
-            // checkedListBox1
-            // 
-            checkedListBox1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { " ", " ", " ", " " });
-            checkedListBox1.Location = new Point(170, 191);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(28, 112);
-            checkedListBox1.TabIndex = 14;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(12, 334);
-            button1.Name = "button1";
-            button1.Size = new Size(140, 23);
-            button1.TabIndex = 15;
-            button1.Text = "Следующий вопрос";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // button2
             // 
-            button2.Location = new Point(12, 363);
+            button2.Location = new Point(12, 380);
             button2.Name = "button2";
             button2.Size = new Size(140, 23);
             button2.TabIndex = 16;
@@ -153,27 +102,42 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 171);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(377, 150);
+            dataGridView1.TabIndex = 17;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(12, 327);
+            button1.Name = "button1";
+            button1.Size = new Size(140, 23);
+            button1.TabIndex = 18;
+            button1.Text = "Следующий вопрос";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // CreateTest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
-            ClientSize = new Size(408, 415);
-            Controls.Add(button2);
+            ClientSize = new Size(701, 415);
             Controls.Add(button1);
-            Controls.Add(checkedListBox1);
+            Controls.Add(dataGridView1);
+            Controls.Add(button2);
             Controls.Add(label4);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
             Controls.Add(label3);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Name = "CreateTest";
             Text = "CreateTest";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,14 +148,10 @@
         private TextBox textBox1;
         private Label label2;
         private TextBox textBox2;
-        private TextBox textBox3;
         private Label label3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
         private Label label4;
-        private CheckedListBox checkedListBox1;
-        private Button button1;
         private Button button2;
+        private DataGridView dataGridView1;
+        private Button button1;
     }
 }
