@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace lab_1.Models
 {
     public class JSONworker
     {
-        private string filePath = "D:/Programming/testing-app-csharp/lab_1/DataBase/data.json";
+        private string filePath = "C:/Users/g220/Desktop/testing-app-csharp/lab_1/DataBase/data.json";
         private void CreateDB()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(filePath));
@@ -25,8 +26,11 @@ namespace lab_1.Models
             if (!File.Exists(filePath)) {
                 CreateDB();
             }
-            string jsonContent = System.IO.File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<dynamic>(jsonContent);
+            string json = JsonConvert.SerializeObject(new Test[] {new Test() { Questions = new() { new Question() { QuestionText = "lolkek", Answers = new List<Answer>() { new Answer() { IsCorrect = true, Text ="kek" } } } } } }, Formatting.Indented);
+            File.WriteAllText(filePath + "dd", json);
+            string jsonContent = System.IO.File.ReadAllText(filePath + "dd");
+            var r = JsonConvert.DeserializeObject<Test[]>(jsonContent);
+            return r.First();
         }
         public void WriteData(Test data)
         {
